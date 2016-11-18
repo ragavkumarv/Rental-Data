@@ -1,1 +1,119 @@
-
+[
+  {
+    companyBasic:{
+      name: '{{firstName()}}',
+    aliasName:'{{surname()}}',
+      businessType: '{{company().toUpperCase()}}',
+      serviceType: '{{company().toUpperCase()}}',
+    industryType: '{{company().toUpperCase()}}',
+      noOfEmployees: '{{integer(0, 100)}}',
+      accountOwner: '{{firstName()}}',
+      group: '{{company().toUpperCase()}}',
+      logo: 'http://placehold.it/32x32'
+      },
+    companyRegistration:{
+     pfRegNo: '{{integer(100, 1000)}}',
+      esiRegNo: '{{integer(100, 1000)}}',
+      eccNo: '{{integer(100, 1000)}}',
+      panNo: '{{integer(100, 1000)}}',
+      vatNo: '{{integer(100, 1000)}}',
+      tanNO: '{{integer(100, 1000)}}',
+      serviceTaxNo: '{{integer(100, 1000)}}',
+      cstBstNo: '{{integer(100, 1000)}}'
+      },
+    mca:{
+      cinNo: '{{integer(100, 1000)}}',
+      rocCode: '{{integer(100, 1000)}}',
+      regNo: '{{integer(100, 1000)}}',
+      companyCategory: '{{company().toUpperCase()}}',
+       companySubCategory: '{{company().toUpperCase()}}',
+      classOfCompany: '{{random("private", "public")}}',
+      authorizedCapital: '{{floating(1000, 4000, 2, "$0,0.00")}}',
+      paidUpCapital: '{{floating(1000, 4000, 2, "$0,0.00")}}',
+      noOfMember: '{{integer(0, 100)}}',
+      dateOfIncorporation: '{{moment(this.date(new Date(2014, 0, 1), new Date())).format("LLLL")}}',
+      listed: '{{random("listed", "not listed")}}'
+      },
+    bank:[{
+      'repeat(4)':{ 
+      accountNo:'{{integer(100000, 999999)}}',
+      accountType: '{{random("savings", "current")}}',
+        ifscCode: '{{objectId()}}',
+        accountHoldersName: '{{firstName()}}',
+        bankName: '{{company().toUpperCase()}}',
+        bankAddress: '{{integer(100, 999)}} {{street()}}, {{city()}}, {{state()}}, {{integer(100, 10000)}}'
+  }
+    }],
+    document:[{
+     'repeat(4)':{
+       documentType: '{{random("word", "pdf")}}',
+       document: "http://placehold.it/32x32"
+     }
+    }],
+    feedback:[{
+        'repeat(4)':{
+      question: '{{lorem(10, "words")}}',
+      options: '{{lorem(4, "words")}}',
+          comment: '{{lorem(20, "words")}}'
+        }
+     }],
+    site:[{
+      'repeat(4)':{
+        addressLabel: '{{integer(100, 999)}}',
+        addressLine1: '{{street()}}',  
+          addressLine2: '{{street()}}',
+          addressline3:  '{{integer(100, 10000)}}',
+        landmark: '{{lorem(2, "words")}}',
+      city: '{{city()}}',
+      state:'{{state()}}',
+        countrty: '{{lorem(1, "words")}}',
+        pincode: '{{integer(100000, 999999)}}',
+        stdCode: '{{integer(100000, 999999)}}',
+        landline1: '+91 {{phone()}}',
+        landline2: '+91 {{phone()}}',
+        fax1: '+0422 {{phone()}}',
+        fax2: '+0422 {{phone()}}',
+        mobile1: '{{integer(7777777777, 9999999999)}}',
+        mobile2: '{{integer(7777777777, 9999999999)}}',
+        email1: '{{lorem(1, "words")}}@{{lorem(1, "words")}}.com',
+        email2: '{{lorem(1, "words")}}@{{lorem(1, "words")}}.com',
+        addressType: '{{random("Home", "Office")}}'
+        
+        
+        
+      }
+    }
+      
+  
+  ],
+    person:[{
+      'repeat(4)':{
+        firstName: '{{firstName()}}',
+        lastName: '{{surname()}}',
+        dept: '{{company().toUpperCase()}}',
+        post: '{{random("JTO", "Manager", "DE", "AGM", "CGM")}}',
+        addressLabel: '{{integer(100, 999)}}',
+        addressLine1: '{{street()}}',  
+          addressLine2: '{{street()}}',
+          addressline3:  '{{integer(100, 10000)}}',
+        landmark: '{{lorem(2, "words")}}',
+      city: '{{city()}}',
+      state:'{{state()}}',
+        countrty: '{{lorem(1, "words")}}',
+        pincode: '{{integer(100000, 999999)}}',
+        stdCode: '{{integer(100000, 999999)}}',
+        landline1: '+91 {{phone()}}',
+        landline2: '+91 {{phone()}}',
+        fax1: '+0422 {{phone()}}',
+        fax2: '+0422 {{phone()}}',
+        mobile1: '{{integer(7777777777, 9999999999)}}',
+        mobile2: '{{integer(7777777777, 9999999999)}}',
+        email1: '{{lorem(1, "words")}}@{{lorem(1, "words")}}.com',
+        email2: '{{lorem(1, "words")}}@{{lorem(1, "words")}}.com',
+        addressType: '{{random("home", "office")}}'
+      
+      
+    }
+  }
+           ]}
+]
