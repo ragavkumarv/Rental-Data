@@ -1,6 +1,9 @@
-[
-  {
+[{
+   'repeat(4)':{
     companyBasic:{
+      id:'{{integer(100, 1000)}}',
+       
+      author:'{{random("Nick", "Andrey","Vlad","Nasta")}}',
       name: '{{firstName()}}',
     aliasName:'{{surname()}}',
       businessType: '{{company().toUpperCase()}}',
@@ -116,4 +119,4 @@
     }
   }
            ]}
-]
+}]
