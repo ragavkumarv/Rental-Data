@@ -1118,16 +1118,68 @@ const companies = [{
 //         visibilityFilter: action.filter
 //       })
 
+// const rmAddressLabel = 762;
+// const newCompanies = companies.map((company) => {
+// 	let companySite = company.site
+// 		.filter(site => site.addressLabel != rmAddressLabel)
+// 	// console.log(companySite);
+// 	// console.log(company);
+// 	let modified = Object.assign({}, company, {
+// 		site: companySite
+// 	})
+// console.log(modified);
+// 	return modified;
+// });
+// console.log(newCompanies);
+
+
 const rmAddressLabel = 762;
+const newSite = {
+		"addressLabel": 812,
+		"addressLine1": "Ryder Street",
+		"addressLine2": "Hewes Street",
+		"addressline3": 9656,
+		"landmark": "aliquip excepteur",
+		"city": "Tetherow",
+		"state": "Washington",
+		"countrty": "ea",
+		"pincode": 623060,
+		"stdCode": 935124,
+		"landline1": "+91 (943) 515-2823",
+		"landline2": "+91 (952) 568-3853",
+		"fax1": "+0422 (968) 453-2860",
+		"fax2": "+0422 (875) 589-3654",
+		"mobile1": 7897671529,
+		"mobile2": 9717446953,
+		"email1": "labore@aliquip.com",
+		"email2": "esse@nisi.com",
+		"addressType": "Home"
+	};
+
 const newCompanies = companies.map((company) => {
-	let companySite = company.site
-		.filter(site => site.addressLabel != rmAddressLabel)
-	// console.log(companySite);
-	// console.log(company);
-	let modified = Object.assign({}, company, {
-		site: companySite
-	})
-console.log(modified);
-	return modified;
+		return Object.assign({}, company, {
+		site:  company.site
+						.filter(site => site.addressLabel != rmAddressLabel)
+	});
 });
+
 console.log(newCompanies);
+console.log(companies);
+
+
+var arr1 = [0, 1, 2];
+var arr2 = [3, 4, 5];
+arr1.push(...arr2);
+
+console.log(arr1);
+const searchId = 659;
+
+const addCompanies = companies.map((company) => {
+	if(company.companyBasic.id==searchId){
+		return Object.assign({}, company, {
+		site:  [...company.site,newSite]
+	});}
+	return company;
+});
+
+console.log(addCompanies);
